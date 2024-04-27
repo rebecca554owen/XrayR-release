@@ -214,10 +214,10 @@ services:
         # - ./custom_outbound.json:/etc/XrayR/custom_outbound.json # 挂载当前目录的配置文件到容器内部。
         # - ./rulelist:/etc/XrayR/rulelist # 挂载当前目录的配置文件到容器内部。
     environment:
-        - PanelType=NewV2board
-        - ApiHost=http://127.0.0.1:7001
-        - ApiKey=xboardisbest
-        - NodeID=1
+        - PanelType=${PanelType}
+        - ApiHost=${ApiHost}
+        - ApiKey=${ApiKey}
+        - NodeID=${NodeID}
         - NodeType=V2ray # Node type: V2ray, Shadowsocks，Trojan
         # - EnableVless=true # Enable Vless for V2ray Type
         # - EnableREALITY=true # 是否开启 REALITY
