@@ -1,8 +1,31 @@
-version: '3'
-services: 
-  xrayr: 
-    image: ghcr.io/wyx2685/xrayr:master
-    volumes:
-      - ./config:/etc/XrayR/ # 映射配置文件夹
+services:
+  xrayr:
+    image: ghcr.io/rebecca554owen/xrayr:latest
+    container_name: xrayr
+    network_mode: host # host 模式方便监听ipv4/ipv6。
     restart: always
-    network_mode: host
+    volumes:
+        # - /etc/XrayR/xrayr.yml:/etc/XrayR/xrayr.yml # 挂载当前目录的配置文件到容器内部。
+        - /etc/XrayR/cert/:/etc/XrayR/cert/ # 挂载目录用于存放证书。
+        # - ./dns.json:/etc/XrayR/dns.json # 挂载当前目录的配置文件到容器内部。
+        # - ./route.json:/etc/XrayR/route.json # 挂载当前目录的配置文件到容器内部。
+        # - ./custom_inbound.json:/etc/XrayR/custom_inbound.json # 挂载当前目录的配置文件到容器内部。
+        # - ./custom_outbound.json:/etc/XrayR/custom_outbound.json # 挂载当前目录的配置文件到容器内部。
+        # - ./rulelist:/etc/XrayR/rulelist # 挂载当前目录的配置文件到容器内部。
+    environment:
+        # - DnsConfigPath=/etc/XrayR/dns.json
+        # - RouteConfigPath=/etc/XrayR/route.json
+        # - InboundConfigPath=/etc/XrayR/custom_inbound.json
+        # - OutboundConfigPath=/etc/XrayR/custom_outbound.json
+        - PanelType=${PanelType}
+        - ApiHost=${ApiHost}
+        - ApiKey=${ApiKey}
+        - NodeID=${NodeID}
+        - NodeType=${NodeType} # 可选 V2ray, Shadowsocks，Trojan
+        # - EnableVless=true # Enable Vless for V2ray Type
+        # - EnableREALITY=true # 是否开启 REALITY
+        # - CertMode=http # 可选 none, file, http, tls, dns.
+        # - CertDomain=xboard.com
+        # - Provider=cloudflare
+        # - CLOUDFLARE_EMAIL=
+        # - CLOUDFLARE_API_KEY=  # 这里务必使用全局API key

@@ -12,9 +12,18 @@ Find the source code here: [XrayR-project/XrayR](https://github.com/XrayR-projec
 # 一键安装
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/wyx2685/XrayR-release/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/rebecca554owen/XrayR-release/master/install.sh)
 ```
-# Docker 安装
+# Docker 一键启动
+```
+docker run -d   --name xrayr   --network host   --restart always  \
+  -e ApiHost=your_api_host  \
+  -e ApiKey=your_api_key  \
+  -e NodeID=1  \
+  -e NodeType=Vless  \
+  -e EnableREALITY=true  \
+  ghcr.io/rebecca554owen/xrayr:latest
 
-暂不支持
+```
+
 

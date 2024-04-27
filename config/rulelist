@@ -1,3 +1,17 @@
-(.+\.|^)(360|so)\.(cn|com)
-baidu.com
-google.com
+# 测速屏蔽
+(.*\.||)(fast|cachefly|speedtest)\.(org|com|net|de)
+# 敏感网站
+(.*.||)(gov|12377|12315|talk.news.pts.org|creaders|zhuichaguoji|efcc.org|cyberpolice|aboluowang|tuidang|epochtimes|dafa­hao|falundafa|minghui|falunaz|zhengjian|110.qq|mingjingnews|inmediahk|xinsheng|bannedbook|ntdtv|falungong|12321|secretchina|epochweekly|cn.rfi)\.(cn|com|org|net|club|net|fr|tw|hk)
+# 高危网站
+(.+.|^)(360|so).(cn|com)
+(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com
+(.+\.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan)\.(cn|com)
+(.*\.)(visa|mycard|mastercard|gash|beanfun|bank).*
+(.*\.)(metatrader4|metatrader5|mql5)\.(org|com|net)
+# BT、PT、挖矿、邮件滥用
+(torrent|\.torrent|peer_id=|info_hash|get_peers|find_node|BitTorrent|announce_peer|announce\.php\?passkey=)
+(^.*@)(guerrillamail|guerrillamailblock|sharklasers|grr|pokemail|spam4|bccto|chacuo|027168)\.(info|biz|com|de|net|org|me|la)
+(eth|asia|eth-eu|eth-us|cn|eth-backup|eth-na|stratum-etheth-eu1|eth-eu2)\.(antpool|sparkpool|f2pool|nanopool)\.(org|com)
+# 私有Tracker协议
+(.*\.||)(gash)\.(com|tw)
+(.*\.||)(mycard)\.(com|tw)

@@ -1,36 +1,52 @@
 {
-    "domainStrategy": "IPOnDemand",
-    "rules": [
-        {
-            "type": "field",
-            "outboundTag": "block",
-            "ip": [
-                "geoip:private"
-            ]
-        },
-        {
-            "type": "field",
-            "outboundTag": "block",
-            "protocol": [
-                "bittorrent"
-            ]
-        },
-        {
-            "type": "field",
-            "outboundTag": "socks5-warp",
-            "domain": []
-        },
-        {
-            "type": "field",
-            "outboundTag": "IPv6_out",
-            "domain": [
-                "geosite:netflix"
-            ]
-        },
-        {
-            "type": "field",
-            "outboundTag": "IPv4_out",
-            "network": "udp,tcp"
-        }
-    ]
+  "domainStrategy": "IPIfNonMatch",
+  "rules": [
+    {
+      "type": "field",
+      "outboundTag": "block",
+      "ip": [
+        "geoip:private"
+      ]
+    },
+    {
+      "type": "field",
+      "outboundTag": "block",
+      "protocol": [
+        "bittorrent"
+      ]
+    },
+    {
+      "type": "field",
+      "domain": [
+        "geosite:google"
+      ],
+      "outboundTag": "IPv4_out"
+    },
+    {
+      "type": "field",
+      "outboundTag": "socks5",
+      "domain": [
+        "geosite:openai"
+      ]
+    },
+    {
+      "type": "field",
+      "domain": [
+        "geosite:cn"
+      ],
+      "outboundTag": "warp"
+    },
+    {
+      "type": "field",
+      "ip": [
+        "geoip:cn"
+      ],
+      "outboundTag": "warp"
+    },
+    {
+      "type": "field",
+      "network": "udp,tcp",
+      "outboundTag": "IPv4_out"
+    }
+  ]
 }
