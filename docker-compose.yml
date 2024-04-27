@@ -1,8 +1,23 @@
-version: '3'
-services: 
-  xrayr: 
-    image: ghcr.io/wyx2685/xrayr:master
-    volumes:
-      - ./config:/etc/XrayR/ # 映射配置文件夹
+services:
+  xrayr:
+    image: ghcr.io/rebecca554owen/xrayr:latest
+    container_name: xrayr
+    network_mode: host # host 模式方便监听ipv4/ipv6。
     restart: always
-    network_mode: host
+    volumes:
+      - /etc/XrayR/:/etc/XrayR/ # 挂载目录用于解决证书申请。
+      # - ./config.yml:/etc/XrayR/config.yml # 挂载当前目录的配置文件到容器内部。
+      # - ./dns.json:/etc/XrayR/dns.json # 挂载当前目录的配置文件到容器内部。
+      # - ./route.json:/etc/XrayR/route.json # 挂载当前目录的配置文件到容器内部。
+      # - ./custom_inbound.json:/etc/XrayR/custom_inbound.json # 挂载当前目录的配置文件到容器内部。
+      # - ./custom_outbound.json:/etc/XrayR/custom_outbound.json # 挂载当前目录的配置文件到容器内部。
+      # - ./rulelist:/etc/XrayR/rulelist # 挂载当前目录的配置文件到容器内部。
+    environment:
+      - PanelType=NewV2board
+      - ApiHost=http://127.0.0.1:7001
+      - ApiKey=openpppisbest
+      - NodeID=1
+      - NodeType=Shadowsocks # Node type: V2ray, Shadowsocks
+      # - EnableVless=true # Enable Vless for V2ray Type
+      # - EnableREALITY=false # 是否开启 REALITY
+      # - 其他变量
