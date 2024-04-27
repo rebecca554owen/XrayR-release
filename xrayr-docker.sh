@@ -218,7 +218,7 @@ services:
         - ApiHost=${ApiHost}
         - ApiKey=${ApiKey}
         - NodeID=${NodeID}
-        - NodeType=V2ray # Node type: V2ray, Shadowsocks，Trojan
+        - NodeType=${NodeType} # Node type: V2ray, Shadowsocks，Trojan
         # - EnableVless=true # Enable Vless for V2ray Type
         # - EnableREALITY=true # 是否开启 REALITY
         # - CertMode=http # 可选 none, file, http, tls, dns.
