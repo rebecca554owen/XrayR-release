@@ -32,7 +32,7 @@ ALICLOUD_SECRET_KEY=${ALICLOUD_SECRET_KEY:-}
 CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL:-}
 CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY:-}
           
-cat > /etc/XrayR/config.yml <<EOF
+cat > /etc/XrayR/xrayr.yml <<EOF
 Log:
   Level: $Level # Log level: none, error, warning, info, debug 
   AccessPath: # /etc/XrayR/access.Log
@@ -114,4 +114,4 @@ Nodes:
 
 EOF
 
-while true; do XrayR --config /etc/XrayR/config.yml; sleep 5; done
+while true; do XrayR --config /etc/XrayR/xrayr.yml; sleep 5; done
