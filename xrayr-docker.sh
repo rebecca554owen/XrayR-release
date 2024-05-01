@@ -125,6 +125,7 @@ install_xrayr() {
     echo -e "> 安装xrayr"
     if [ ! -d ${xrayr_config} ]; then
         mkdir -p ${xrayr_path}
+        touch ${xrayr_path}/xrayr.yml
     else
         echo "您可能已经安装过xrayr,重复安装会覆盖数据,请注意。"
         read -e -r -p "是否退出安装? [Y/n] " input
