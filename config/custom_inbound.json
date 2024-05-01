@@ -1,14 +1,14 @@
 [
     {
         "listen": "0.0.0.0",
-        "port": 1234,
+        "port": "${port}",
         "protocol": "socks",
         "settings": {
             "auth": "auth",
             "accounts": [
                 {
-                    "user": "rebecca554owen",
-                    "pass": "rebecca554owen"
+                    "user": "${user}",
+                    "pass": "${pass}"
                 }
             ],
             "udp": true,
