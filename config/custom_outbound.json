@@ -19,12 +19,12 @@
         "settings": {
             "servers": [
                 {
-                "address": "${address}",
-                "port": "${port}",
+                "address": "127.0.0.1",
+                "port": "40000",
                 "users": [
                         {
-                          "user": "${user}",
-                          "pass": "${pass}"
+                          "user": "",
+                          "pass": ""
                         }
                     ]
                 }
