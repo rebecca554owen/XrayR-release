@@ -31,7 +31,7 @@ ALICLOUD_ACCESS_KEY=${ALICLOUD_ACCESS_KEY:-}
 ALICLOUD_SECRET_KEY=${ALICLOUD_SECRET_KEY:-}
 CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL:-}
 CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY:-}
-          
+
 cat > /etc/XrayR/xrayr.yml <<EOF
 Log:
   Level: $Level # Log level: none, error, warning, info, debug 
