@@ -17,11 +17,19 @@
         "tag": "socks5",
         "protocol": "socks",
         "settings": {
-        "servers": [{
-            "address": "127.0.0.1",
-            "port": 1080
-    }]
-    }
+            "servers": [
+                {
+                "address": "127.0.0.1",
+                "port": 1234,
+                "users": [
+                        {
+                          "user": "rebecca554owen",
+                          "pass": "rebecca554owen"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     {
         "protocol": "wireguard",
