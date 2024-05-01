@@ -206,7 +206,7 @@ services:
     network_mode: host # host 模式方便监听ipv4/ipv6。
     restart: always
     volumes:
-        - /etc/XrayR/:/etc/XrayR/ # 挂载目录用于存放证书等。
+        - /etc/XrayR/:/etc/XrayR/ # 全部挂载目录用于存放证书等，以下为单独挂载。
         # - ./config.yml:/etc/XrayR/config.yml # 挂载当前目录的配置文件到容器内部。
         # - ./dns.json:/etc/XrayR/dns.json # 挂载当前目录的配置文件到容器内部。
         # - ./route.json:/etc/XrayR/route.json # 挂载当前目录的配置文件到容器内部。
@@ -214,6 +214,10 @@ services:
         # - ./custom_outbound.json:/etc/XrayR/custom_outbound.json # 挂载当前目录的配置文件到容器内部。
         # - ./rulelist:/etc/XrayR/rulelist # 挂载当前目录的配置文件到容器内部。
     environment:
+        # - DnsConfigPath=/etc/XrayR/dns.json
+        # - RouteConfigPath=/etc/XrayR/route.json
+        # - InboundConfigPath=/etc/XrayR/custom_inbound.json
+        # - OutboundConfigPath=/etc/XrayR/custom_outbound.json
         - PanelType=${PanelType}
         - ApiHost=${ApiHost}
         - ApiKey=${ApiKey}
