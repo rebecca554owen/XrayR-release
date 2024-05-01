@@ -206,7 +206,7 @@ services:
     network_mode: host # host 模式方便监听ipv4/ipv6。
     restart: always
     volumes:
-        - /etc/XrayR/:/etc/XrayR/ # 挂载目录用于解决证书申请。
+        - /etc/XrayR/:/etc/XrayR/ # 挂载目录用于存放证书等。
         # - ./config.yml:/etc/XrayR/config.yml # 挂载当前目录的配置文件到容器内部。
         # - ./dns.json:/etc/XrayR/dns.json # 挂载当前目录的配置文件到容器内部。
         # - ./route.json:/etc/XrayR/route.json # 挂载当前目录的配置文件到容器内部。
@@ -218,7 +218,7 @@ services:
         - ApiHost=${ApiHost}
         - ApiKey=${ApiKey}
         - NodeID=${NodeID}
-        - NodeType=${NodeType} # Node type: V2ray, Shadowsocks，Trojan
+        - NodeType=${NodeType} # 可选 V2ray, Shadowsocks，Trojan
         # - EnableVless=true # Enable Vless for V2ray Type
         # - EnableREALITY=true # 是否开启 REALITY
         # - CertMode=http # 可选 none, file, http, tls, dns.
