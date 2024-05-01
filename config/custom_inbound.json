@@ -4,7 +4,7 @@
         "port": 1234,
         "protocol": "socks",
         "settings": {
-            "auth": "auth",
+            "auth": "password",
             "accounts": [
                 {
                     "user": "rebecca554owen",
