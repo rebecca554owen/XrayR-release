@@ -20,7 +20,7 @@
             "servers": [
                 {
                 "address": "${address}",
-                "port": ${port},
+                "port": "${port}",
                 "users": [
                         {
                           "user": "${user}",
