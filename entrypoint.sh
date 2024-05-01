@@ -114,9 +114,4 @@ Nodes:
 
 EOF
 
-address=${address:-127.0.0.1}
-port=${port:-1234}
-user=${user:-rebecca554owen}
-pass=${pass:-rebecca554owen}
-
 while true; do XrayR --config /etc/XrayR/xrayr.yml; sleep 5; done
