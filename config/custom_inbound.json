@@ -11,7 +11,7 @@
                     "pass": "rebecca554owen"
                 }
             ],
-            "udp": false,
+            "udp": true,
             "ip": "127.0.0.1",
             "userLevel": 0
         }
