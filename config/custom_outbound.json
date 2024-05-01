@@ -1,17 +1,11 @@
 [
     {
         "tag": "IPv4_out",
-        "protocol": "freedom",
-        "settings": {
-        "domainStrategy": "UseIPv4v6"
-    }
+        "protocol": "freedom"
     },
     {
         "tag": "IPv6_out",
-        "protocol": "freedom",
-        "settings": {
-        "domainStrategy": "UseIPv6"
-    }
+        "protocol": "freedom"
     },
     {
         "tag": "socks5",
@@ -19,12 +13,12 @@
         "settings": {
             "servers": [
                 {
-                "address": "127.0.0.1",
-                "port": "40000",
-                "users": [
+                    "address": "127.0.0.1",
+                    "port": 40000,
+                    "users": [
                         {
-                          "user": "",
-                          "pass": ""
+                            "user": "",
+                            "pass": ""
                         }
                     ]
                 }
@@ -35,21 +29,21 @@
         "protocol": "wireguard",
         "tag": "warp",
         "settings": {
-        "secretKey": "2DRzSLT1OBh+mN4fxZc+gu+hfYb8X4a9d0oD5NCb60Q=",
-        "address":[
-            "172.16.0.2/32",
-            "2606:4700:110:8e15:9080:66bd:20e8:c4e7/128"
-    ],
-        "mtu": 1380,
-        "reserved": [45, 85, 21],
-        "peers": [
-            {
-                "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-                "endpoint": "engage.cloudflareclient.com:2408",
-                "keepAlive": 25
+            "privateKey": "2DRzSLT1OBh+mN4fxZc+gu+hfYb8X4a9d0oD5NCb60Q=",
+            "addresses": [
+                "172.16.0.2/32",
+                "2606:4700:110:8e15:9080:66bd:20e8:c4e7/128"
+            ],
+            "mtu": 1380,
+            "reserved": [45, 85, 21],
+            "peers": [
+                {
+                    "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+                    "endpoint": "engage.cloudflareclient.com:2408",
+                    "persistentKeepalive": 25
+                }
+            ]
         }
-    ]
-    }
     },
     {
         "protocol": "blackhole",
