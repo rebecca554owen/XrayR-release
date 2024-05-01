@@ -14,7 +14,7 @@
     }
     },
     {
-        "tag": "socks5-warp",
+        "tag": "socks5",
         "protocol": "socks",
         "settings": {
         "servers": [{
