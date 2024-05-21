@@ -32,12 +32,6 @@ ALICLOUD_SECRET_KEY=${ALICLOUD_SECRET_KEY:-}
 CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL:-}
 CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY:-}
 
-# 配置文件路径
-config_file="/etc/XrayR/xrayr.yml"
-
-# 检查配置文件是否存在
-if [[ ! -f "${config_file}" ]]; then
-  # 文件不存在，创建文件
 cat > /etc/XrayR/xrayr.yml <<EOF
 Log:
   Level: $Level # Log level: none, error, warning, info, debug 
@@ -119,9 +113,7 @@ Nodes:
           CLOUDFLARE_API_KEY: $CLOUDFLARE_API_KEY 
 
 EOF
-  echo "配置文件已创建成功，开始启动。"
-else
-  # 文件存在，进行其他操作
-  echo "配置文件已存在，直接启动。"
-fi
+
+  echo "xrayr.yml 配置文件已创建成功，开始启动xrayr"
+
 while true; do XrayR --config /etc/XrayR/xrayr.yml; sleep 5; done
