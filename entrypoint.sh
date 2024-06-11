@@ -19,6 +19,8 @@ NodeType=${NodeType:-V2ray}
 EnableVless=${EnableVless:-false}
 
 RuleListPath=${RuleListPath:-}
+ListenIP=${ListenIP:-0.0.0.0} 
+SendIP=${SendIP:-0.0.0.0} 
 EnableDNS=${EnableDNS:-false}
 DNSType=${EnableDNS:-UseIP}
 EnableREALITY=${EnableREALITY:-false}
